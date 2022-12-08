@@ -1,0 +1,25 @@
+.bt{
+  width: 200px;
+  height: 50px;
+  cursor: pointer;
+  border: none;
+  background: green;
+  border-radius: 30px;
+  outline: none;
+}
+div{
+  display: flex;
+ justify-content: center;
+}
+ .bt:hover{
+    transform: translateY(-10px);
+    box-shadow: 0, 20px,black;
+
+ }  
+ .bt:active{
+    transform: translateY(-3px);
+    box-shadow: 0, 5px,black;
+ } 
+ body{
+    margin:10% auto;
+ }
