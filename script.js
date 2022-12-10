@@ -61,8 +61,8 @@ btn.addEventListener('click',()=>{
 })
 // вторая кнопка (двойной эспрессо)   
 btn1.addEventListener('click',()=>{
-    t.changeCoffe(t.vCoffe,2);
-    t.changeWoter(t.vWoter,2);
+    t.vCoffe =t.changeCoffe(t.vCoffe,1);
+    t.vWoter = t.changeWoter(t.vWoter,1);
     console.log(t.vCoffe);
     console.log(t.vWoter);
     
