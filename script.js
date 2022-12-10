@@ -100,11 +100,7 @@ btn4.addEventListener('click',()=>{
     myChart.data.datasets[0].data[1] = t.vWoter;
     myChart.update();
 }
-/*setInterval function (){
-    chart.data.datasets[0].data[5] = 80;
-    chart.data.labels[5] = "Newly Added";
-    chart.update();
-}*/
+
 
 
 
