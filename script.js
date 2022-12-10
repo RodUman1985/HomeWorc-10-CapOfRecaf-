@@ -45,10 +45,6 @@ const btn1=document.getElementById('02');
 const btn2=document.getElementById('03');
 const btn3=document.getElementById('04');
 const btn4=document.getElementById('05');
-//const p=document.createElement('p');
-//document.body.append(btn,btn1,btn2,);
-//document.body.append(p);
-//document.body.append(btn3,btn4);
 
 //перввая кнопка (эспрессо)
 btn.addEventListener('click',()=>{
