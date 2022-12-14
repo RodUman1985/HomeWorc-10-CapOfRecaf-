@@ -1,43 +1,44 @@
 const vWotMax=200;
 const vCoffMax=100;
+//const  cf = [1,1.5,4];
 
+// this.h=vC - cf*this.partOfWoter; this.d=vW - cf*this.partOfWoter;
 
+//return  this.h  return this.d;
 
 class CoffeMashine{
- vCoffe=vCoffMax;
-  vWoter=vWotMax;
+   vCoffe=vCoffMax;
+   vWoter=vWotMax;
    partOfCoffe=25;  
-   partOfWoter=50;  
+   partOfWoter=50; 
    changeCoffe(vC,cf) {
-
-    if (vC < cf*this.partOfCoffe){
-        alert('Мало зерен кофе.Пополните запас');
-        
-    }else{
-        this.h=vC - cf*this.partOfCoffe;
-        
-    }
-     return  this.h
-   }
+     this.h=vC - cf*this.partOfCoffe;
+     return  this.h;
+   };
    changeWoter(vW,cf) {
-   
-    if (vW < cf*this.partOfWoter){
-        alert('Мало воды.Пополните запас');
-    }else{
-        this.d=vW - cf*this.partOfWoter;
-
-    }
+    this.d=vW - cf*this.partOfWoter;
     return this.d;
-   }
-  reWoter(){
-    this.vWoter=vWotMax;
-    return this.vWoter;
   }
+  pCoff(vC,cf){
+    if(vC<cf*this.partOfCoffe){
+        return true;
+        }
+  };
+  pWot(vW,cf){
+    if(vW<cf*this.partOfWoter){
+    return true;
+        }
+  };
   reCoffe(){
     this.vCoffe=vCoffMax;
     return this.vCoffe;
   }
+  reWoter(){
+    this.vWoter=vWotMax;
+    return this.vWoter;
+  }
 }
+
 let t=new CoffeMashine();
 console.log(t.vCoffe);
 const btn=document.getElementById('01');
@@ -48,31 +49,57 @@ const btn4=document.getElementById('05');
 
 //перввая кнопка (эспрессо)
 btn.addEventListener('click',()=>{
-    t.vCoffe =t.changeCoffe(t.vCoffe,1);
-   t.vWoter = t.changeWoter(t.vWoter,1)
-    console.log( t.vCoffe);
-    console.log(t.vWoter);
+ if(t.pCoff(t.vCoffe,1)==true){
+    alert('мало зерен кофе.пополните запас');
+} else { 
+    if(t.pWot(t.vWoter,1)==true){
+        alert('мало воды.пополните запас');
+    } else{
+         t.vCoffe =t.changeCoffe(t.vCoffe,1);
+         t.vWoter = t.changeWoter(t.vWoter,1);
+         console.log(t.vCoffe);
+         console.log(t.vWoter);
+         addData();
+    }
+
+   }
     
-    addData();
+    
 })
 // вторая кнопка (двойной эспрессо)   
 btn1.addEventListener('click',()=>{
-    t.vCoffe =t.changeCoffe(t.vCoffe,1);
-    t.vWoter = t.changeWoter(t.vWoter,1);
-    console.log(t.vCoffe);
-    console.log(t.vWoter);
+    if(t.pCoff(t.vCoffe,2)==true){
+        alert('мало зерен кофе.пополните запас');   /*при коэфициенте  cf=2, после первого нажатия на кнопку диаграмма не меняется, 
+                                                    после второго- изменяетя, отображая двойное иизменение параметров. При замене cf=1.5 (меньше 2) отоюражает*/
+    } else { 
+        if(t.pWot(t.vWoter,2)==true){
+            alert('мало воды.пополните запас');
+        } else{
+             t.vCoffe =t.changeCoffe(t.vCoffe,2);
+             t.vWoter = t.changeWoter(t.vWoter,2);
+             console.log(t.vCoffe);
+             console.log(t.vWoter);
+             addData();
+        }
     
-    addData();
+       }
 })  
 //третья кнопка (американо)  
 btn2.addEventListener('click',()=>{
-    t.vCoffe=t.changeCoffe(t.vCoffe,1);
-    t.vWoter=t.changeWoter(t.vWoter,4);
-    console.log(t.vCoffe);
-    console.log(t.vWoter);
-   
-    addData();
-
+    if(t.pCoff(t.vCoffe,1)==true){
+        alert('мало зерен кофе.пополните запас');
+    } else { 
+        if(t.pWot(t.vWoter,4)==true){
+            alert('мало воды.пополните запас');
+        } else{
+             t.vCoffe =t.changeCoffe(t.vCoffe,1);
+             t.vWoter = t.changeWoter(t.vWoter,4);
+             console.log(t.vCoffe);
+             console.log(t.vWoter);
+             addData();
+        }
+    
+       }
 }) 
 //четвертая кнопка (пополнение запасов кофе) 
 btn3.addEventListener('click',()=>{
