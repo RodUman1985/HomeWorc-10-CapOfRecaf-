@@ -1,7 +1,14 @@
 const vWotMax=200;
 const vCoffMax=100;
+//const  cf = [1,1.5,4];
 
+// this.h=vC - cf*this.partOfWoter; this.d=vW - cf*this.partOfWoter;
 
+<<<<<<< HEAD
+=======
+//return  this.h  return this.d;
+
+>>>>>>> daea5b1b633086e79597885183728892fa53e726
 class CoffeMashine{
    vCoffe=vCoffMax;
    vWoter=vWotMax;
@@ -65,8 +72,13 @@ btn.addEventListener('click',()=>{
 // вторая кнопка (двойной эспрессо)   
 btn1.addEventListener('click',()=>{
     if(t.pCoff(t.vCoffe,2)==true){
+<<<<<<< HEAD
         alert('мало зерен кофе.пополните запас');   /*при коэфициенте  cf=2, после первого нажатия на кнопку диаграмма  меняется, но визуально это видно плохо.
                                                     При замене cf=1.5 (меньше 2) отоюражает изменения лучше*/
+=======
+        alert('мало зерен кофе.пополните запас');   /*при коэфициенте  cf=2, после первого нажатия на кнопку диаграмма не меняется, 
+                                                    после второго- изменяетя, отображая двойное иизменение параметров. При замене cf=1.5 (меньше 2) отоюражает*/
+>>>>>>> daea5b1b633086e79597885183728892fa53e726
     } else { 
         if(t.pWot(t.vWoter,2)==true){
             alert('мало воды.пополните запас');
